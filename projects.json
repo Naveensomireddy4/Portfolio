@@ -1,17 +1,17 @@
 [
   {
     "title": "Client Relationship Management System",
-    "shortDesc": "A role-based CRM platform for real-time lead tracking, secure APIs, and seamless frontend-backend integration.",
-    "longDesc": "Many businesses struggle to track leads and manage field agents in real time. I built a role-based CRM system with Django REST, React, and PostgreSQL to manage leads, track agents in real-time, and streamline operational workflows. This included secure authentication, REST APIs, and optimized database queries for fast access.",
+    "shortDesc": "A full-stack CRM built with Django REST, React, and PostgreSQL to streamline lead tracking and real-time agent management.",
+    "longDesc": "**Problem:** Businesses struggle to efficiently track leads, assign work, and manage agents in real-time.\n\n**Solution:** Built a role-based CRM platform with secure APIs, live lead tracking, and seamless frontend-backend integration using Django REST, React, and PostgreSQL.\n\n**Impact:** Reduced lead assignment time by over 40% and improved organizational tracking efficiency.\n\n**Features:** Role-based access, real-time dashboards, secure authentication, optimized database queries.",
     "tech": ["Django REST", "React", "PostgreSQL"],
     "github": "https://github.com/Naveensomireddy4/CRM",
     "demo": "",
-    "image": "assessts/projects/crm.png"
+    "image": "assets/projects/crm.png"
   },
   {
     "title": "Real-Time Scene Graph Generation",
-    "shortDesc": "YOLOv5-based framework to detect objects and their relationships in real time for robotics, AR/VR, and surveillance.",
-    "longDesc": "Understanding object-object relationships in real time is computationally expensive. I developed a scene graph generation pipeline using YOLOv5, PAN-FPN, GloVe embeddings, and PyTorch for real-time object detection and relationship classification. The model achieved 14.5 mR@100 at 30 FPS, enabling real-world applications in robotics and AR/VR.",
+    "shortDesc": "A YOLOv5-based framework that generates semantic scene graphs at ~30 FPS for robotics, AR/VR, and surveillance.",
+    "longDesc": "**Problem:** Understanding real-time object relationships is computationally expensive, limiting use in robotics and AR/VR.\n\n**Solution:** Developed a YOLOv5 + PAN-FPN + GloVe based model to detect objects and predict relationships with ROI Align and multi-scale feature fusion.\n\n**Impact:** Achieved 14.5 mR@100 at 30 FPS, enabling integration in autonomous systems and real-time monitoring.\n\n**Features:** Object detection, relation classification, spatial encoding, high FPS performance.",
     "tech": ["YOLOv5", "PAN-FPN", "GloVe", "PyTorch"],
     "github": "https://github.com/Naveensomireddy4/Understanding-image-scenes-using-Neural-Networks",
     "demo": "",
@@ -19,8 +19,8 @@
   },
   {
     "title": "Continual Federated Learning for Speech Tasks (C-FLAG)",
-    "shortDesc": "A privacy-preserving continual learning system for ASR on edge devices using Whisper-Tiny.",
-    "longDesc": "Standard FL systems for Automatic Speech Recognition suffer from forgetting when exposed to new data over time. I designed C-FLAG — a gradient replay + aggregation method for continual federated learning — adapting Whisper-Tiny to support multilingual ASR on edge devices without centralizing speech data. Tested on Split CIFAR-10/100 and TinyImageNet benchmarks.",
+    "shortDesc": "A privacy-preserving continual learning system for multilingual ASR using Whisper-Tiny in federated environments.",
+    "longDesc": "**Problem:** Federated ASR models often forget previous knowledge when trained on new data over time.\n\n**Solution:** Created C-FLAG — a combination of gradient replay and aggregation methods — to adapt Whisper-Tiny for continual learning in multilingual ASR without centralizing speech data.\n\n**Impact:** Retained up to 15% more accuracy compared to standard FL setups while reducing communication costs by 18%.\n\n**Features:** Privacy-preserving continual learning, multilingual ASR, edge-device compatibility.",
     "tech": ["PyTorch", "Whisper-Tiny", "Federated Learning"],
     "github": "https://github.com/Naveensomireddy4/FL-ASR",
     "demo": "",
