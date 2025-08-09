@@ -25,8 +25,6 @@ class Particle {
     this.x = Math.random() * canvas.width;
     this.y = Math.random() * canvas.height;
     this.size = Math.random() * 2 + 1;
-    this.baseX = this.x;
-    this.baseY = this.y;
     this.dx = (Math.random() - 0.5) * 0.5;
     this.dy = (Math.random() - 0.5) * 0.5;
   }
@@ -148,7 +146,7 @@ fetch("projects.json")
       card.classList.add("project-card", "tilt-card");
       card.innerHTML = `
         <h3>${proj.title}</h3>
-        <p>${proj.shortDesc}</p>
+        <p class="short-desc">${proj.shortDesc}</p>
         <p class="project-tech">${proj.tech.join(", ")}</p>
         <a href="#" class="view-more" data-title="${proj.title}">View More</a>
       `;
@@ -171,7 +169,7 @@ fetch("research.json")
       card.innerHTML = `
         <h3>${item.title}</h3>
         <p><em>${item.conference}</em></p>
-        <p>${item.summary}</p>
+        <p class="short-desc">${item.summary}</p>
         <p class="project-tech">${item.methods.join(", ")}</p>
         <a href="#" class="view-research" data-title="${item.title}">View More</a>
       `;
@@ -184,8 +182,6 @@ fetch("research.json")
 /* ==============================
    PROJECT MODAL LOGIC
    ============================== */
-
-
 function addProjectModalLogic(projects) {
   const modal = document.getElementById("project-modal");
   const modalBody = document.getElementById("modal-body");
@@ -241,7 +237,6 @@ function addProjectModalLogic(projects) {
   });
 }
 
-
 /* ==============================
    RESEARCH MODAL LOGIC
    ============================== */
@@ -255,14 +250,32 @@ function addResearchModalLogic(research) {
       e.preventDefault();
       const title = btn.getAttribute("data-title");
       const paper = research.find((r) => r.title === title);
+
       modalBody.innerHTML = `
-        <h2>${paper.title}</h2>
-        <p><strong>Conference:</strong> ${paper.conference}</p>
-        <p>${paper.summary}</p>
-        <p><strong>Methods:</strong> ${paper.methods.join(", ")}</p>
-        <p><strong>Datasets:</strong> ${paper.datasets.join(", ")}</p>
-        <ul>${paper.results.map(r => `<li>${r}</li>`).join("")}</ul>
-        ${paper.link ? `<p><a href="${paper.link}" target="_blank">View Project</a></p>` : ""}
+        <div class="modal-content-container">
+          <h2>${paper.title}</h2>
+          <div class="modal-section">
+            <h3>📑 Conference</h3>
+            <p>${paper.conference}</p>
+          </div>
+          <div class="modal-section">
+            <h3>📝 Summary</h3>
+            <p>${paper.summary}</p>
+          </div>
+          <div class="modal-section">
+            <h3>🔍 Methods</h3>
+            <p>${paper.methods.join(", ")}</p>
+          </div>
+          <div class="modal-section">
+            <h3>📊 Datasets</h3>
+            <p>${paper.datasets.join(", ")}</p>
+          </div>
+          <div class="modal-section">
+            <h3>🏆 Results</h3>
+            <ul>${paper.results.map(r => `<li>${r}</li>`).join("")}</ul>
+          </div>
+          ${paper.link ? `<div class="modal-links"><a href="${paper.link}" target="_blank" class="modal-btn">View Project</a></div>` : ""}
+        </div>
       `;
       modal.style.display = "block";
     });
