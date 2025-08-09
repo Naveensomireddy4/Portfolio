@@ -1,0 +1,26 @@
+[
+  {
+    "title": "C-FLAG: Continual Federated Learning for Speech Tasks",
+    "conference": "In preparation for submission to NeurIPS 2025",
+    "summary": "Proposed a novel gradient replay + aggregation strategy for multilingual Automatic Speech Recognition (ASR) in federated learning settings.",
+    "methods": ["Gradient Replay", "Whisper-Tiny Adaptation", "Federated Optimization"],
+    "datasets": ["Split CIFAR-10/100", "TinyImageNet"],
+    "results": [
+      "Improved retention scores by 15% over baseline FL",
+      "Reduced communication overhead by 18%"
+    ],
+    "link": "https://github.com/Naveensomireddy4/FL-ASR"
+  },
+  {
+    "title": "Client Substitution Strategy in Federated Learning",
+    "conference": "Presented at NITK FL Optimization Symposium 2024",
+    "summary": "Developed a dynamic client substitution approach to improve model convergence in dropout-prone federated settings.",
+    "methods": ["Dynamic Scheduling", "Dropout Mitigation", "ResNet-18 Training"],
+    "datasets": ["NIH Chest X-ray Dataset"],
+    "results": [
+      "Accuracy boost of 5–8% in dropout scenarios",
+      "Faster convergence by optimizing client participation"
+    ],
+    "link": ""
+  }
+]
