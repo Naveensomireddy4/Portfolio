@@ -14,7 +14,7 @@
   {
     "title": "Client Substitution Strategy in Federated Learning",
     "conference": "Presented at NITK FL Optimization Symposium 2024",
-    "summary": "Developed a dynamic client substitution approach to improve model convergence in dropout-prone federated settings.",
+    "summary": "Developed a dynamic client substitution approach to improve model convergence in dropout-prone federated learning scenarios.",
     "methods": ["Dynamic Scheduling", "Dropout Mitigation", "ResNet-18 Training"],
     "datasets": ["NIH Chest X-ray Dataset"],
     "results": [
