@@ -265,6 +265,46 @@ nav#navbar a:hover {
   cursor: pointer;
 }
 
+.modal-content-container h2 {
+  margin-bottom: 10px;
+  color: var(--accent-color);
+}
+
+.modal-tech {
+  font-size: 0.95em;
+  margin-bottom: 15px;
+  opacity: 0.9;
+}
+
+.modal-description {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.modal-description strong {
+  color: var(--accent-color);
+}
+
+.modal-links {
+  display: flex;
+  gap: 10px;
+}
+
+.modal-btn {
+  display: inline-block;
+  padding: 8px 12px;
+  background: var(--accent-color);
+  color: #000;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.modal-btn:hover {
+  opacity: 0.85;
+}
+
+
 /* ==============================
    RESPONSIVE
    ============================== */
