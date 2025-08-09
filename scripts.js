@@ -184,6 +184,8 @@ fetch("research.json")
 /* ==============================
    PROJECT MODAL LOGIC
    ============================== */
+
+
 function addProjectModalLogic(projects) {
   const modal = document.getElementById("project-modal");
   const modalBody = document.getElementById("modal-body");
@@ -195,19 +197,33 @@ function addProjectModalLogic(projects) {
       const title = btn.getAttribute("data-title");
       const project = projects.find((p) => p.title === title);
 
-      // Convert markdown-like **bold** into HTML <strong>
-      const formattedDesc = project.longDesc
-        .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
-        .replace(/\n/g, "<br>");
+      // Split into sections
+      const sections = [
+        { key: "Problem", icon: "📌" },
+        { key: "Solution", icon: "💡" },
+        { key: "Impact", icon: "🚀" },
+        { key: "Features", icon: "🛠" }
+      ];
+
+      let formattedDesc = "";
+      sections.forEach(({ key, icon }) => {
+        const regex = new RegExp(`\\*\\*${key}:\\*\\*(.*?)((?=\\*\\*)|$)`, "s");
+        const match = project.longDesc.match(regex);
+        if (match) {
+          formattedDesc += `<div class="modal-section">
+            <h3>${icon} ${key}</h3>
+            <p>${match[1].trim()}</p>
+          </div>`;
+        }
+      });
 
       modalBody.innerHTML = `
         <div class="modal-content-container">
           <h2>${project.title}</h2>
-          <div class="modal-tech">
-            <strong>Tech Stack:</strong> ${project.tech.join(", ")}
-          </div>
-          <div class="modal-description">
-            ${formattedDesc}
+          ${formattedDesc}
+          <div class="modal-section">
+            <h3>🔧 Tech Stack</h3>
+            <p>${project.tech.join(", ")}</p>
           </div>
           <div class="modal-links">
             ${project.github ? `<a href="${project.github}" target="_blank" class="modal-btn"><i class="fab fa-github"></i> GitHub</a>` : ""}
@@ -224,6 +240,7 @@ function addProjectModalLogic(projects) {
     if (e.target === modal) modal.style.display = "none";
   });
 }
+
 
 /* ==============================
    RESEARCH MODAL LOGIC
