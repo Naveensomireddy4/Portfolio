@@ -37,7 +37,6 @@ class Particle {
     ctx.fill();
   }
   update() {
-    // Gentle gravitation toward mouse
     let dx = mouse.x - this.x;
     let dy = mouse.y - this.y;
     let distance = Math.sqrt(dx * dx + dy * dy);
@@ -160,6 +159,29 @@ fetch("projects.json")
   });
 
 /* ==============================
+   LOAD RESEARCH FROM JSON
+   ============================== */
+const researchGrid = document.getElementById("research-grid");
+fetch("research.json")
+  .then((res) => res.json())
+  .then((research) => {
+    research.forEach((item) => {
+      const card = document.createElement("div");
+      card.classList.add("project-card", "tilt-card");
+      card.innerHTML = `
+        <h3>${item.title}</h3>
+        <p><em>${item.conference}</em></p>
+        <p>${item.summary}</p>
+        <p class="project-tech">${item.methods.join(", ")}</p>
+        <a href="#" class="view-research" data-title="${item.title}">View More</a>
+      `;
+      researchGrid.appendChild(card);
+    });
+    addResearchModalLogic(research);
+    initTilt();
+  });
+
+/* ==============================
    PROJECT MODAL LOGIC
    ============================== */
 function addProjectModalLogic(projects) {
@@ -178,6 +200,38 @@ function addProjectModalLogic(projects) {
         <p><strong>Tech:</strong> ${project.tech.join(", ")}</p>
         ${project.github ? `<p><a href="${project.github}" target="_blank">GitHub</a></p>` : ""}
         ${project.demo ? `<p><a href="${project.demo}" target="_blank">Live Demo</a></p>` : ""}
+      `;
+      modal.style.display = "block";
+    });
+  });
+
+  closeBtn.addEventListener("click", () => (modal.style.display = "none"));
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) modal.style.display = "none";
+  });
+}
+
+/* ==============================
+   RESEARCH MODAL LOGIC
+   ============================== */
+function addResearchModalLogic(research) {
+  const modal = document.getElementById("project-modal");
+  const modalBody = document.getElementById("modal-body");
+  const closeBtn = document.querySelector(".modal-close");
+
+  document.querySelectorAll(".view-research").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const title = btn.getAttribute("data-title");
+      const paper = research.find((r) => r.title === title);
+      modalBody.innerHTML = `
+        <h2>${paper.title}</h2>
+        <p><strong>Conference:</strong> ${paper.conference}</p>
+        <p>${paper.summary}</p>
+        <p><strong>Methods:</strong> ${paper.methods.join(", ")}</p>
+        <p><strong>Datasets:</strong> ${paper.datasets.join(", ")}</p>
+        <ul>${paper.results.map(r => `<li>${r}</li>`).join("")}</ul>
+        ${paper.link ? `<p><a href="${paper.link}" target="_blank">View Project</a></p>` : ""}
       `;
       modal.style.display = "block";
     });
