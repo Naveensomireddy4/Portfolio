@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Client Relationship Management System",
+    "shortDesc": "A role-based CRM platform for real-time lead tracking, secure APIs, and seamless frontend-backend integration.",
+    "longDesc": "Many businesses struggle to track leads and manage field agents in real time. I built a role-based CRM system with Django REST, React, and PostgreSQL to manage leads, track agents in real-time, and streamline operational workflows. This included secure authentication, REST APIs, and optimized database queries for fast access.",
+    "tech": ["Django REST", "React", "PostgreSQL"],
+    "github": "https://github.com/Naveensomireddy4/CRM",
+    "demo": "",
+    "image": "assessts/projects/crm.png"
+  },
+  {
+    "title": "Real-Time Scene Graph Generation",
+    "shortDesc": "YOLOv5-based framework to detect objects and their relationships in real time for robotics, AR/VR, and surveillance.",
+    "longDesc": "Understanding object-object relationships in real time is computationally expensive. I developed a scene graph generation pipeline using YOLOv5, PAN-FPN, GloVe embeddings, and PyTorch for real-time object detection and relationship classification. The model achieved 14.5 mR@100 at 30 FPS, enabling real-world applications in robotics and AR/VR.",
+    "tech": ["YOLOv5", "PAN-FPN", "GloVe", "PyTorch"],
+    "github": "https://github.com/Naveensomireddy4/Understanding-image-scenes-using-Neural-Networks",
+    "demo": "",
+    "image": "assets/projects/scene-graph.jpg"
+  },
+  {
+    "title": "Continual Federated Learning for Speech Tasks (C-FLAG)",
+    "shortDesc": "A privacy-preserving continual learning system for ASR on edge devices using Whisper-Tiny.",
+    "longDesc": "Standard FL systems for Automatic Speech Recognition suffer from forgetting when exposed to new data over time. I designed C-FLAG — a gradient replay + aggregation method for continual federated learning — adapting Whisper-Tiny to support multilingual ASR on edge devices without centralizing speech data. Tested on Split CIFAR-10/100 and TinyImageNet benchmarks.",
+    "tech": ["PyTorch", "Whisper-Tiny", "Federated Learning"],
+    "github": "https://github.com/Naveensomireddy4/FL-ASR",
+    "demo": "",
+    "image": "assets/projects/cflag.jpg"
+  }
+]

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Somireddy Naveen Kumar Reddy | Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- HEADER / HERO -->
+  <header id="hero">
+    <canvas id="particles"></canvas>
+    <div class="hero-bg"></div>
+    <h1>Somireddy Naveen Kumar Reddy</h1>
+    <p class="tagline"></p>
+    <div class="hero-buttons">
+      <a href="assets/resume.pdf" class="magnetic" target="_blank">Download Resume</a>
+      <a href="#projects" class="magnetic">View Projects</a>
+    </div>
+  </header>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- MAIN SECTIONS -->
+  <main>
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="card tilt-card">
+        <h2>About Me</h2>
+        <p>
+          Hi, I’m <strong>Somireddy Naveen Kumar Reddy</strong> — a Federated Learning researcher passionate about building AI systems 
+          that are private, scalable, and adaptive. From computer vision to speech recognition, 
+          I’ve tackled challenges like client dropout, heterogeneous data, and model optimization for edge devices. 
+          My mission: push the boundaries of decentralized AI while protecting privacy.
+        </p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="card tilt-card">
+        <h2>Skills & Tools</h2>
+        <div class="skills-grid">
+          <span class="skill-chip">Python</span>
+          <span class="skill-chip">C++</span>
+          <span class="skill-chip">SQL</span>
+          <span class="skill-chip">PyTorch</span>
+          <span class="skill-chip">TensorFlow</span>
+          <span class="skill-chip">Hugging Face</span>
+          <span class="skill-chip">Federated Learning</span>
+          <span class="skill-chip">Continual Learning</span>
+          <span class="skill-chip">Computer Vision</span>
+          <span class="skill-chip">NLP</span>
+          <span class="skill-chip">Django REST</span>
+          <span class="skill-chip">React</span>
+          <span class="skill-chip">PostgreSQL</span>
+          <span class="skill-chip">AWS</span>
+          <span class="skill-chip">Docker</span>
+          <span class="skill-chip">Git</span>
+          <span class="skill-chip">Linux</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="card tilt-card">
+        <h2>Projects</h2>
+        <div id="projects-grid" class="projects-grid">
+          <!-- Loaded dynamically from projects.json -->
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <div class="card tilt-card">
+        <h2>Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h3>Research Assistant – Continual Federated Learning</h3>
+              <p>IIIT Delhi | Dec 2024 – Present</p>
+              <ul>
+                <li>Developed C-FLAG integrating AGEM & memory-based gradients for low-forgetting continual learning.</li>
+                <li>Adapted Whisper-Tiny into a privacy-preserving multilingual ASR system for edge devices.</li>
+                <li>Improved model accuracy & retention across Split CIFAR-10/100 and TinyImageNet benchmarks.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h3>Research Intern – Federated Learning Optimization</h3>
+              <p>NITK Surathkal | May 2024 – Nov 2024</p>
+              <ul>
+                <li>Trained ResNet-18 on NIH Chest X-ray dataset using FL.</li>
+                <li>Proposed a client substitution strategy, boosting accuracy by 5–8% in dropout scenarios.</li>
+                <li>Designed dynamic client scheduling, improving convergence speed by optimizing resource allocation.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="section">
+      <div class="card tilt-card">
+        <h2>Education</h2>
+        <p><strong>B.Tech in Information Technology — CGPA: 8.68</strong></p>
+        <p>Indian Institute of Engineering Science and Technology, Shibpur | 2021 – 2025</p>
+        <p>Relevant coursework: Machine Learning, AI, Data Structures & Algorithms, Operating Systems, DBMS, Computer Networks.</p>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" class="section">
+      <div class="card tilt-card">
+        <h2>Achievements</h2>
+        <ul>
+          <li><strong>LeetCode Knight</strong> – Top 3% globally with 1100+ problems solved and 100+ contests participated.</li>
+          <li><strong>Rank 97</strong> in LeetCode Biweekly Contest 133 – Top 0.5% worldwide.</li>
+          <li><strong>Rank 337</strong> in CodeChef Starters 90 Division 4 – Top 1% globally.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="card tilt-card">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:naveensomireddy2112@gmail.com">naveensomireddy2112@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/naveen-kumar-reddy-somi-reddy-1b1ab2246/">linkedin.com/in/naveen-kumar-reddy-somi-reddy</a></p>
+        <p>GitHub: <a href="https://github.com/Naveensomireddy4">github.com/Naveensomireddy4</a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- PROJECT MODAL -->
+  <div id="project-modal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
