@@ -194,12 +194,26 @@ function addProjectModalLogic(projects) {
       e.preventDefault();
       const title = btn.getAttribute("data-title");
       const project = projects.find((p) => p.title === title);
+
+      // Convert markdown-like **bold** into HTML <strong>
+      const formattedDesc = project.longDesc
+        .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+        .replace(/\n/g, "<br>");
+
       modalBody.innerHTML = `
-        <h2>${project.title}</h2>
-        <p>${project.longDesc}</p>
-        <p><strong>Tech:</strong> ${project.tech.join(", ")}</p>
-        ${project.github ? `<p><a href="${project.github}" target="_blank">GitHub</a></p>` : ""}
-        ${project.demo ? `<p><a href="${project.demo}" target="_blank">Live Demo</a></p>` : ""}
+        <div class="modal-content-container">
+          <h2>${project.title}</h2>
+          <div class="modal-tech">
+            <strong>Tech Stack:</strong> ${project.tech.join(", ")}
+          </div>
+          <div class="modal-description">
+            ${formattedDesc}
+          </div>
+          <div class="modal-links">
+            ${project.github ? `<a href="${project.github}" target="_blank" class="modal-btn"><i class="fab fa-github"></i> GitHub</a>` : ""}
+            ${project.demo ? `<a href="${project.demo}" target="_blank" class="modal-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>` : ""}
+          </div>
+        </div>
       `;
       modal.style.display = "block";
     });
